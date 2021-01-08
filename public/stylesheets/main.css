@@ -26,7 +26,7 @@ body{
     font-family:'Poppins',sans-serif;
 }
 
-.main,.brand__logo,.sidebar__profile,.hero__text,.hero__image{
+.main,.sidebar__profile,.hero__text,.hero__image{
      margin:0 auto;
 }
 .categories__title,.showcase__title{
@@ -46,9 +46,9 @@ body{
 
 /*Media Queries for pc*/
 
-@media screen and (min-width:1200px){
+@media screen and (min-width:900px){
     :root{
-        font-size:20px;
+        font-size:18px;
     }
    
    
@@ -57,7 +57,7 @@ body{
        height:10vh; 
     }
     .sidebar{
-        width:25vw !important;
+        width:25vw;
     }
     .form{
    
@@ -66,7 +66,7 @@ body{
     .hero{
         display:flex;
         justify-content:space-around;
-        align-items:center;
+        align-items:flex-start;
 
         
     }
@@ -77,7 +77,7 @@ body{
     .hero__image{
   
     width:500px;
-    height:900px;
+    height:700px;
    
     background:url('../images/intro.jpg');
     /* background-size:contain; */
@@ -92,7 +92,7 @@ body{
   
 }
     .hero__title{
-        font-size:40rem;
+        font-size:4rem;
         margin-bottom:0.3em;
         
     }

@@ -1,8 +1,10 @@
-<%-include('partials/header')%>
-    <%-include('partials/searchForm')%>
-      
+
+
         <link rel="stylesheet" href="/stylesheets/index.css">
         <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+
+<%-include('partials/header')%>
+<%-include('partials/searchForm')%>
 
         <%if(success && success.length>0){%>
             <p style="color:green">

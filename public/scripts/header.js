@@ -27,6 +27,7 @@ sidebarCloseBtn.addEventListener('click', () => {
 
 
 submenuToggler.addEventListener('click', () => {
+    console.log("helo");
 
     submenu.classList.toggle('submenu--active');
 

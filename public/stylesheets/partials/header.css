@@ -3,12 +3,13 @@
     background-color:#6C63FF;
     display: flex;
     align-items:center;
-    /* justify-content: ba; */
+    /* justify-content: space-between; */
     padding:0 1em;
     height:8vh;
     color:var(--header-clr);
     font-size:1.6rem;
     /* position:fixed;
+    
     top:0;
     z-index:5; */
    
@@ -38,6 +39,7 @@
     text-transform:capitalize;
     color:var(--brand-logo-clr);
     margin-left:1em;
+    margin-right:auto;
 }
 
 .cart,.toogle{
@@ -157,7 +159,7 @@
    margin-top:0.3em;
 }
 .submenu--active{
-    display:block;
+    display:block !important;
 }
 .submenu{
     display: none;
