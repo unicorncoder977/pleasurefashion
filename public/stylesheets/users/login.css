@@ -1,0 +1,124 @@
+    body {
+        background-color:lightblue;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        font-size: 18px;
+    }
+
+    .signup {
+        background-color: white;
+        height: 80%;
+        width: 60%;
+        display: flex;
+        border-radius: 1.5em;
+    }
+
+    .signup__right {
+        border-top-right-radius: 1.5em;
+        border-bottom-right-radius: 1.5em;
+        background-image: url("/images/login.jpg");
+        height: 100%;
+        width: 50%;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .signup__left {
+        border-top-left-radius: 1.5em;
+        border-bottom-left-radius: 1.5em;
+        height: 80vh;
+        width: 50%;
+        background-color:white;
+        padding:4em 2em;
+    }
+
+
+    .container__pro-text {
+        text-align: center;
+        font-size: 2.5rem;
+        font-weight: 800;
+        margin-bottom: 45px; 
+    }
+
+    input::placeholder {
+        color: rgb(146, 143, 143);
+        text-transform: capitalize;
+    }
+
+    input:focus {
+        outline: none;
+        border: 2px solid rgb(148, 76, 230);
+    }
+
+    .signup__username,
+    .signup__email,
+    .signup__password {
+        padding-left: 30px;
+        width: 100%;
+        height: 7vh;
+        margin-top: 22px;
+        border-radius: 22px;
+        color: black;
+        border: 2px solid rgb(100, 99, 102);
+    }
+
+    .signup__btn {
+        border: none;
+        background-color: hotpink;
+        color: white ;
+        margin-top: 24px;
+        width: 100%;
+        height: 7vh;
+        border-radius: 22px;
+        font-size: 16px;
+        font-weight: 500;
+    }
+
+    .signup__btn:focus {
+        outline: none;
+        background-color: rgb(127, 126, 129);
+    }
+
+    .container__bottom-text a {
+        display: flex;
+        margin-top: 30px;
+        font-size: 0.9rem;
+        margin-bottom: 2em;
+        
+    }
+
+    .container__login-button {
+        color: blue;
+        text-decoration: underline;
+        font-size: 1.5rem;
+        text-decoration: none;
+        margin-left: 5px;
+        margin-bottom: 2em;
+    }
+
+
+    @media screen and (max-width:768px) {
+        body {
+            font-size: 16px;
+            display: block;
+            padding: 4em 1em 0;
+        }
+        .signup {
+            display: block;
+            margin:0 auto;  
+            width: 95%;
+        }
+
+        .signup__right {
+            display: none;
+        }
+
+        .signup__left {
+            width: 100%;
+            border-radius: 1.5em;
+        }
+
+    }

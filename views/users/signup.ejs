@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1, maximum-scale=1">
+    <title>sign up page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+        integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+        crossorigin="anonymous" />
+</head>
+<link rel="stylesheet" href="/stylesheets/main.css">
+<link rel="stylesheet" href="/stylesheets/users/signup.css">
+
+
+<body>
+
+
+
+    <div id="signup" class="signup">
+
+        <div class="signup__left">
+         
+
+
+                <form id='signup-form' action="/users/signup" method="POST" enctype="multipart/form-data">
+                    <div class="upload__container" onclick="getElementById('fileInput').click()">
+                        <!-- <span class="upload__text">upload image</span> -->
+                        <!-- <i style="font-size:3rem;" class="upload__icon fas fa-user-circle"></i> -->
+                        <img class="upload__image" src="/images/user-circle-solid.svg" alt="user">
+
+
+
+                    </div>
+                    <p class="upload__text">Upload image </p>
+
+                    <input class="signup__username " id="usernameInput" name="username" type="text"
+                        placeholder="username">
+                    <br>
+
+                    <input class="signup__email " id="emailInput" name="email" type="text" placeholder="email">
+                    <br>
+
+
+                    <input class="signup__password" id="passwordInput" name="password" type="password"
+                        placeholder="password">
+                    <br>
+
+
+                    <input class="signup__file" type="file" style="display:none" id="fileInput" onchange="preview()"
+                        name="profileImage">
+                    <br>
+                    <ul class="error__list">
+                        <%if(error && error.length>0){%>
+                            <li class="error__item">
+                                <%=error%>
+                            </li>
+
+
+                            <%}%>
+
+                    </ul>
+
+
+
+
+
+                    <button class="signup__btn">Sign in</button>
+
+                </form>
+
+                <span class="container__bottom-text">
+
+                    Alredy have an account?
+                    <a class="container__login-button" href="/users/login">Login</a>
+                </span>
+        </div>
+        <div class="signup__right">
+
+        </div>
+
+    </div>
+<script src="/scripts/signup.js"></script>
+   
+  
+
+</body>
+
+</html>

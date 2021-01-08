@@ -1,0 +1,289 @@
+<%-include('partials/header')%>
+    <%-include('partials/searchForm')%>
+        <link rel="stylesheet" href="/stylesheets/index.css">
+        <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+
+        <%if(success && success.length>0){%>
+            <p style="color:green">
+                <%=success%>
+            </p>
+
+            <%}%>
+
+                <div class="hero">
+                    <div class="hero__text">
+                        <h1 class="hero__title"><span class="hero__stay">stay</span> trendy!</h1>
+                        <p class="hero__leading">choose handpicked clothes for the womens
+                        </p>
+                    </div>
+                    <div class="hero__image">
+                       
+                    </div>
+                </div>
+
+                <main class="main">
+                    <section class="showcase">
+                        <h1 class="showcase__title">casuals</h1>
+
+                        <div class="carousel"
+                            data-flickity='{ "pageDots":false,"cellAlign": "left", "contain": true,"freeScroll":true }'>
+                            <div class="carousel__cell">
+                                <a class="carousel__link" href="/tags/shirt"><img class="carousel__image"
+                                        src="images/shirt.jpg" alt=""></a>
+                                <p class="carousel__title">shirt</p>
+
+                            </div>
+                            <div class="carousel__cell">
+                                <a class="carousel__link" href="/tags/tshirt"><img class="carousel__image"
+                                        src="images/t-shirt.jpeg" alt=""></a>
+                                <p class="carousel__title">t-shirt</p>
+
+                            </div>
+                            <div class="carousel__cell">
+                                <a class="carousel__link" href="/tags/pants"><img class="carousel__image"
+                                        src="images/pants.jpg" alt=""></a>
+                                <p class="carousel__title">pants</p>
+
+                            </div>
+                            <div class="carousel__cell">
+                                <a class="carousel__link" href="/tags/skirt"><img class="carousel__image"
+                                        src="images/skirts.jpeg" alt=""></a>
+                                <p class="carousel__title">skirts</p>
+
+                            </div>
+                            <div class="carousel__cell">
+                                <a class="carousel__link" href="/tags/shorts"><img class="carousel__image"
+                                        src="images/shorts.jpg" alt=""></a>
+                                <p class="carousel__title">shorts</p>
+
+                            </div>
+                            <div class="carousel__cell">
+                                <a class="carousel__link" href="/tags/dresses"><img class="carousel__image"
+                                        src="images/dresses.jpg" alt=""></a>
+                                <p class="carousel__title">dresses</p>
+
+                            </div>
+
+
+
+
+                        </div>
+                    </section>
+                    <section class="showcase">
+                        <h1 class="showcase__title">ethnic</h1>
+
+                        <div class="carousel"
+                            data-flickity='{ "pageDots":false,"cellAlign": "left", "contain": true,"freeScroll":true }'>
+                            <div class="carousel__cell">
+                                <a class="carousel__link" href="/tags/saree"><img class="carousel__image"
+                                        src="images/saree.jpeg" alt=""></a>
+                                <p class="carousel__title">saree</p>
+
+                            </div>
+                            <div class="carousel__cell">
+                                <a class="carousel__link" href="/tags/suit"><img class="carousel__image"
+                                        src="images/suit.jpg" alt=""></a>
+                                <p class="carousel__title">suit</p>
+
+                            </div>
+                            <div class="carousel__cell">
+                                <a class="carousel__link" href="/tags/lehenga"><img class="carousel__image"
+                                        src="images/lehenga.jpg" alt=""></a>
+                                <p class="carousel__title">lehenga</p>
+
+                            </div>
+                            <div class="carousel__cell">
+                                <a class="carousel__link" href="/tags/kurti"><img class="carousel__image"
+                                        src="images/kurti.jpg" alt=""></a>
+                                <p class="carousel__title">kurti</p>
+
+                            </div>
+                            <div class="carousel__cell">
+                                <a class="carousel__link" href="/tags/dupatta"><img class="carousel__image"
+                                        src="images/dupatta.jpg" alt=""></a>
+                                <p class="carousel__title">dupatta</p>
+
+                            </div>
+                            <div class="carousel__cell">
+                                <a class="carousel__link" href="/tags/palazzo"><img class="carousel__image"
+                                        src="images/plazzo.jpg" alt=""></a>
+                                <p class="carousel__title">palazzo</p>
+
+                            </div>
+
+
+
+                        </div>
+                    </section>
+
+                    <!-- <section class="showcase">
+                            <h1 class="showcase__title">top picks</h1>
+
+                            <div class="carousel"
+                                data-flickity='{ "pageDots":false,"cellAlign": "left", "contain": true,"freeScroll":true }'>
+                                <div class="carousel__cell">
+                                    <a class="carousel__link" href="#"><img class="carousel__image"
+                                            src="images/topPicks-1 (1).jpg" alt=""></a>
+                                    <p class="carousel__title">₹479</p>
+
+                                </div>
+
+
+                            </div>
+
+
+
+
+                            </div>
+                        </section> -->
+                    <section class="showcase">
+                        <h1 class="showcase__title">categories</h1>
+                        <div class="categories__container">
+                            <a href="/tags/sportswear" class="category__link">
+                                <img src="images/sportswear.jpg" alt="" class="category__image">
+                                <p class="category__title">sportswear</p>
+
+                            </a>
+                            <a href="/tags/korean" class="category__link">
+                                <img src="images/korean-2.jpg" alt="" class="category__image">
+                                <p class="category__title">korean</p>
+
+                            </a>
+
+
+                            <a href="/tags/merch" class="category__link">
+                                <img src="images/merch.jpg" alt="" class="category__image">
+                                <p class="category__title">merch</p>
+
+                            </a>
+                            <a href="/tags/handbag" class="category__link">
+                                <img src="images/handbag.jpg" alt="" class="category__image">
+                                <p class="category__title">handbag</p>
+
+                            </a>
+                            <a href="/tags/winterwear" class="category__link">
+                                <img src="images/winterwear.jpg" alt="" class="category__image">
+                                <p class="category__title">winterwear</p>
+
+                            </a>
+                            <a href="/tags/shoes" class="category__link">
+                                <img src="images/shoes-1 (1).jpg" alt="" class="category__image">
+                                <p class="category__title">shoes</p>
+
+                            </a>
+
+                        </div>
+                    </section>
+
+                    <section class="brands">
+                        <h1 class="showcase__title">brands</h1>
+                        <div class="brands__carousel"
+                            data-flickity='{ "wrapAround":true,"autoPlay":800,"pageDots":false,"cellAlign": "left", "contain": true,"freeScroll":true }'>
+                            <div class="brand__cell">
+                                <a href="#" class="brand__link">
+                                    <img src="images/fila.png" alt="" class="brand__image">
+
+                                </a>
+                            </div>
+                            <div class="brand__cell">
+                                <a href="#" class="brand__link">
+                                    <img src="images/h&m.png" alt="" class="brand__image">
+
+                                </a>
+                            </div>
+                            <div class="brand__cell">
+                                <a href="#" class="brand__link">
+                                    <img src="images/puma.png" alt="" class="brand__image">
+
+                                </a>
+                            </div>
+                            <div class="brand__cell">
+                                <a href="#" class="brand__link">
+                                    <img src="images/nike.jpeg" alt="" class="brand__image">
+
+                                </a>
+                            </div>
+                            <div class="brand__cell">
+                                <a href="#" class="brand__link">
+                                    <img src="images/varsace.jpeg" alt="" class="brand__image">
+
+                                </a>
+                            </div>
+                            <div class="brand__cell">
+                                <a href="#" class="brand__link">
+                                    <img src="images/gcci.jpeg" alt="" class="brand__image">
+
+                                </a>
+                            </div>
+
+                            <div class="brand__cell">
+                                <a href="#" class="brand__link">
+                                    <img src="images/wrogn.png" alt="" class="brand__image">
+
+                                </a>
+                            </div>
+
+                            <div class="brand__cell">
+                                <a href="#" class="brand__link">
+                                    <img src="images/polo.png" alt="" class="brand__image">
+
+                                </a>
+                            </div>
+
+                            <div class="brand__cell">
+                                <a href="#" class="brand__link">
+                                    <img src="images/adidas.png" alt="" class="brand__image">
+
+                                </a>
+                            </div>
+
+                            <div class="brand__cell">
+                                <a href="#" class="brand__link">
+                                    <img src="images/gap.png" alt="" class="brand__image">
+
+                                </a>
+                            </div>
+
+
+
+
+                        </div>
+                    </section>
+                    <!-- <section class="beauty">
+
+            <a href="#" class="beauty__link">
+                <div class="beauty__image"></div>
+                <p class="beauty__title">beauty products</p>
+
+            </a>
+        </section> -->
+
+                    <section class="glass">
+                        <a href="#" class="glass__container">
+                            <img src="images/glass-1.jpeg" alt="" class="glass__image">
+                            <img src="images/glass-2.jpeg" alt="" class="glass__image">
+                            <img src="images/glass-3.jpeg" alt="" class="glass__image">
+
+                        </a>
+                        <!-- <p class="glass__title">glasses</p> -->
+                    </section>
+
+                    <section class="fly">
+                        <a href="#" class="fly__container">
+                            <img src="images/fly-item-1.jpeg" alt="" class="fly__item fly__image">
+                            <img src="images/fly-item-2.jpeg" alt="" class="fly__item fly__image">
+                            <p class="fly__item fly__title">fly clothes...</p>
+                            <img src="images/fly-item-4.jpeg" alt="" class="fly__item fly__image">
+                            <img src="images/fly-item-5.jpeg" alt="" class="fly__item fly__image">
+                            <img src="images/fly-item-6.jpeg" alt="" class=" fly__item fly__image">
+
+
+
+                        </a>
+                    </section>
+
+                </main>
+
+
+                <%-include('partials/footer')%>
+                <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>

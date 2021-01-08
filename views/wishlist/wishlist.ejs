@@ -1,0 +1,63 @@
+<%-include('.. /partials/header')%>
+    <link rel="stylesheet" href="/stylesheets/wishlist/wishlist.css">
+
+
+    <div class="order__wrapper">
+        <%-include('../partials/backArrow')%>
+
+
+            <h1 class="cart__title">My Wishlist</h1>
+
+
+
+            <div class="order__header">
+
+
+
+            </div>
+
+            <div class="orders">
+
+                <%if(wishlist.length>0){%>
+                    <%wishlist.forEach(function(product){%>
+
+                        <div class="order">
+
+                            <a href="/products/<%=product._id%>">
+                                <img class="order__image" src="<%=product.image%>">
+                            </a>
+                            <div class="order__info">
+                                <h4 class="order__name">
+                                    <%=product.name%>
+
+                                </h4>
+
+                                <div class="order__footer">
+                                    <span class="order__price">₹<%=product.price%></span>
+
+                                </div>
+
+
+
+
+                            </div>
+
+
+
+                        </div>
+
+                        <%})%>
+
+                            <%}else{%>
+                                <p>empty wishlist</p>
+
+                                <%}%>
+
+
+            </div>
+
+
+    </div>
+    <script src="/scripts/cart.js"></script>
+
+    <%-include('../partials/footer')%>
