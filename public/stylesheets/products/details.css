@@ -94,7 +94,7 @@ input[type=number]::-webkit-inner-spin-button{
 }
 
 .buy__btn{
-    width:100%;
+    /* width:100%; */
     font-size:1.4rem;
     font-weight:700;
     color:white;

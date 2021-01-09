@@ -8,18 +8,15 @@
 
             <h1 class="cart__title">My Cart</h1>
 
-
-
-            <div class="order__header">
-
-                <span class="wrapper__total">Total:<span class="total__amount">₹<%=cart.total%></span></span>
-                <button total-price='<%=cart.total%>' class="checkout__btn">Checkout</button>
-
-            </div>
-
-            <div class="orders">
-
                 <%if(cart.products.length>0){%>
+                    <div class="orders">
+                    <div class="order__header">
+                    
+                        <span class="wrapper__total">Total:<span class="total__amount">₹<%=cart.total%></span></span>
+                        <button total-price='<%=cart.total%>' class="checkout__btn">Checkout</button>
+                    
+                    </div>
+
                     <%cart.products.forEach(function(product){%>
 
                         <div class="order">
@@ -57,7 +54,13 @@
                         <%})%>
 
                             <%}else{%>
-                                <p>empty cart</p>
+                                <div class="not__found">
+                                    <h4 class="not__found__text">cart is empty</h4>
+                                    <div class="not__found__img"></div>
+                                
+                                
+                                </div>
+
 
                                 <%}%>
 

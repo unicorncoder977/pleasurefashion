@@ -102,7 +102,7 @@
         display: flex;
         justify-content: center;
         margin-top: 14px;
-        font-size: 0.9rem;
+font-size: 0.9rem;
     }
     .container__login-button {
         color: tomato;

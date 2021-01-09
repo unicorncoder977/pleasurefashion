@@ -10,12 +10,6 @@
 
 
 
-            <div class="order__header">
-
-
-
-            </div>
-
             <div class="orders">
 
                 <%if(wishlist.length>0){%>
@@ -49,7 +43,12 @@
                         <%})%>
 
                             <%}else{%>
-                                <p>empty wishlist</p>
+                                <div class="not__found">
+                                    <h4 class="not__found__text">wishlist is empty</h4>
+                                    <div class="not__found__img"></div>
+                                
+                                
+                                </div>
 
                                 <%}%>
 

@@ -1,3 +1,29 @@
+.not__found{
+    
+     text-align: center;
+     padding: 1em 2em 0;
+     /* outline: 2px solid red; */
+     margin: 2em auto;
+     width: 90%;
+     height: 50vh;
+} 
+.not__found__text {
+    /* height: ; */
+    font-size: 1.9rem;
+    color:grey;
+    font-weight: 700;
+    margin-bottom:2em;
+    text-transform: capitalize;
+}
+.not__found__img {
+    /* outline:2px solid blue; */
+    height: 90%;
+    width: 100%;
+    background-image: url("/images/empty_wishlist.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: top;
+}
 
 .order__wrapper{
 

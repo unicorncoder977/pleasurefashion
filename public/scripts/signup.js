@@ -17,8 +17,8 @@ function preview() {
     var fileSizeBytes = fileInput.files.item(0).size;
     var fileSizeKb = fileSizeBytes / 1024;
 
-    if (fileSizeKb > 100) {
-        errors.push('profile image size should be less than 100kb');
+    if (fileSizeKb > 1024) {
+        errors.push('profile image size should be less than 1mb');
     }
 
 }
