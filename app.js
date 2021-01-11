@@ -319,7 +319,7 @@ app.get('*', (req, res) => {
 
 
 
-var dbUrl = process.env.DB_URL || 'mongodb://localhost/women-shop';
+// var dbUrl = process.env.DB_URL || 'mongodb://localhost/women-shop';
 
 //connecting to the mongo db database
 mongoose.connect(process.env.DB_URL,
