@@ -7,17 +7,18 @@
     <title>Pleasure</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
         integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
-        crossorigin="anonymous" />     
-   
+        crossorigin="anonymous" />
+
     <link rel="stylesheet" href="/stylesheets/partials/footer.css">
     <link rel="stylesheet" href="/stylesheets/partials/header.css">
     <link rel="stylesheet" href="/stylesheets/main.css">
-   
 
 
 </head>
 
 <body>
+
+
 
     <header class="header">
         <i id="sidebar-open" class="toogle fas fa-bars"></i>
@@ -29,26 +30,14 @@
 
         </div>
 
-        <aside  class="sidebar" id="sidebar">
+        <aside class="sidebar" id="sidebar">
 
             <div class="sidebar__profile">
-                <%if(!currentUser){%>
-                    <img class="profile__image" src="images/user-circle-solid.svg" alt="">
-                    <h4 class="profile__username">guest</h4>
+
+                <img class="profile__image" src="images/user-circle-solid.svg" alt="">
+                <h4 class="profile__username">guest</h4>
 
 
-                    <%}else{%>
-                        <img class="profile__image" src="<%=currentUser.profileImage%>" alt="">
-                        <h4 class="profile__username">
-                            <%=currentUser.username%>
-                        </h4>
-
-
-
-
-                        <%}%>
-
-     
             </div>
             <ul class="sidebar__list">
                 <%if(!currentUser){%>
@@ -57,7 +46,7 @@
                     <li class="sidebar__item login-toogler"><a href="/users/login" class="sidebar__link">login</a></li>
 
                     <%}else{%>
-                        <li class="sidebar__item"><a href="/users/logout" class="sidebar__link">logout <i
+                        <li class="sidebar__item"><a href="/logout" class="sidebar__link">logout <i
                                     style="color:red" class=" sidebar__link__icon fas fa-sign-out-alt"></i></a></li>
                         <%}%>
 
@@ -92,6 +81,13 @@
 
 
     </header>
+    <script>
+        
+        var currentUserString = '<%-JSON.stringify(currentUser)%>';
+        var currentUser = JSON.parse(currentUserString);
+        var profileImageDisplay = document.querySelector('.profile__image');
+        var usernameDisplay = document.querySelector('.profile__username');
+        profileImageDisplay.setAttribute('src', currentUser.profileImage);
+        usernameDisplay.textContent = currentUser.username;
 
-
-
+    </script>

@@ -4,11 +4,13 @@ const mongoose = require('mongoose');
 const Product = require('../models/product');
 const products = require('../../products.json');
 const productController = require('../controllers/products');
-const userController = require('../controllers/users');
 const orderController = require('../controllers/orders');
 const User = require('../models/users');
-const checkAuth = require('../middlewares/check-auth');
 
+// Middleware - Check user is Logged in
+const checkUserLoggedIn = (req, res, next) => {
+    req.user ? next() : res.sendStatus(401);
+}
 
 router.get('/', productController.products_get_all);
 router.get('/data/:productId', async (req, res) => {
@@ -30,7 +32,7 @@ router.get('/data/:productId', async (req, res) => {
     }
 });
 
-router.post('/:productId/comments', checkAuth, productController.product_create_comment);
+router.post('/:productId/comments', productController.product_create_comment);
 
 router.get("/:productId", productController.product_get_product);
 

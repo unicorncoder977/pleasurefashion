@@ -26,9 +26,9 @@ exports.product_get_product = async (req, res, next) => {
     const productId = req.params.productId;
 
     try {
-  
+
         const product = await Product.findById(productId).populate('comments').exec();
-        res.render('products/details', { product: product});
+        res.render('products/details', { product: product });
 
     }
     catch (err) {
@@ -92,13 +92,14 @@ exports.product_create_comment = async (req, res, next) => {
             like: 10,
             author: {
                 username: req.user.username,
-                profileImage: req.user.profileImage,
+                profileImage:req.user.profileImage,
             }
 
         });
 
 
         const createdComment = await newComment.save();
+        console.log(createdComment);
         foundProduct.comments.push(createdComment);
 
         const savedProduct = foundProduct.save();

@@ -9,7 +9,6 @@
             <h1 class="cart__title">My Wishlist</h1>
 
 
-
             <div class="orders">
 
                 <%if(wishlist.length>0){%>
@@ -30,10 +29,12 @@
                                     <span class="order__price">₹<%=product.price%></span>
 
                                 </div>
+                            <form action="/wishlist/<%=product._id%>?_method=DELETE" method="POST">
+                                <button class="order__delete__btn">Delete</button>
+                            
+                            </form>
 
-
-
-
+                    
                             </div>
 
 
@@ -46,8 +47,8 @@
                                 <div class="not__found">
                                     <h4 class="not__found__text">wishlist is empty</h4>
                                     <div class="not__found__img"></div>
-                                
-                                
+
+
                                 </div>
 
                                 <%}%>

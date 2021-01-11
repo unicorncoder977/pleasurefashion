@@ -1,10 +1,8 @@
-
-
-        <link rel="stylesheet" href="/stylesheets/index.css">
-        <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+<link rel="stylesheet" href="/stylesheets/index.css">
+<link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
 
 <%-include('partials/header')%>
-<%-include('partials/searchForm')%>
+    <%-include('partials/searchForm')%>
 
         <%if(success && success.length>0){%>
             <p style="color:green">
@@ -13,6 +11,8 @@
 
             <%}%>
 
+
+
                 <div class="hero">
                     <div class="hero__text">
                         <h1 class="hero__title"><span class="hero__stay">stay</span> trendy!</h1>
@@ -20,7 +20,7 @@
                         </p>
                     </div>
                     <div class="hero__image">
-                       
+
                     </div>
                 </div>
 
@@ -261,17 +261,17 @@
             </a>
         </section> -->
 
-                    <section class="glass">
+                    <!-- <section class="glass">
                         <a href="#" class="glass__container">
                             <img src="images/glass-1.jpeg" alt="" class="glass__image">
                             <img src="images/glass-2.jpeg" alt="" class="glass__image">
                             <img src="images/glass-3.jpeg" alt="" class="glass__image">
 
                         </a>
-                        <!-- <p class="glass__title">glasses</p> -->
-                    </section>
+                        < <p class="glass__title">glasses</p> -->
+                    <!-- </section> -->
 
-                    <section class="fly">
+                    <!-- <section class="fly">
                         <a href="#" class="fly__container">
                             <img src="images/fly-item-1.jpeg" alt="" class="fly__item fly__image">
                             <img src="images/fly-item-2.jpeg" alt="" class="fly__item fly__image">
@@ -283,10 +283,61 @@
 
 
                         </a>
+                    </section> -->
+
+                    <section class="poster">
+                        <h1 class="poster__title">winter collection</h1>
+                        <div class="poster__container">
+                            <a href="#" class="container__item1">
+                                <img class="poster__img" src="/images/korean-1.jpg" alt="item1">
+                            </a>
+                            <a href="#" class="container__item2">
+                                <img class="poster__img" src="/images/item2.jpg" alt="item2">
+                            </a>
+                            <a href="#" class="container__item3">
+                                <img class="poster__img" src="/images/item3.jpg" alt="item3">
+                            </a>
+                            <a href="#" class="container__item4">
+                                <img class="poster__img" src="/images/item4.jpg" alt="item2">
+                            </a>
+                        </div>
+                    </section>
+
+
+
+                    <section class="poster">
+                        <h1 class="poster__title">Tshirt</h1>
+                        <div class="poster__container">
+                            <a href="#" class="container__item1">
+                                <img class="poster__img" src="/images/tshirt1.jpg" alt="item1">
+                            </a>
+                            <a href="#" class="container__item2">
+                                <img class="poster__img" src="/images/tshirt1.jpg" alt="item2">
+                            </a>
+                            <a href="#" class="container__item3">
+                                <img class="poster__img" src="/images/tshirt1.jpg" alt="item3">
+                            </a>
+                            <a href="#" class="container__item4">
+                                <img class="poster__img" src="/images/tshirt1.jpg" alt="item2">
+                            </a>
+                        </div>
+                    </section>
+
+                    <section class="showoff">
+                        <a href="#" class="showoff__image"></a>
+                        <h4 class="showoff__text showoff__text-1">loream ipsum bacon ipsum</h4>
+                    </section>
+                    <section class="showoff">
+                        <a href="#" class="showoff__image"></a>
+                        <h4 class="showoff__text showoff__text-2">loream ipsum bacon ipsum</h4>
+                    </section>
+                    <section class="showoff">
+                        <a href="#" class="showoff__image"></a>
+                        <h4 class="showoff__text showoff__text-3">loream ipsum bacon ipsum</h4>
                     </section>
 
                 </main>
 
 
                 <%-include('partials/footer')%>
-                <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+                    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>

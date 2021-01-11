@@ -23,57 +23,12 @@
          
 
 
-                <form id='signup-form' action="/users/signup" method="POST" enctype="multipart/form-data">
-                    <div class="upload__container" onclick="getElementById('fileInput').click()">
-                        <!-- <span class="upload__text">upload image</span> -->
-                        <!-- <i style="font-size:3rem;" class="upload__icon fas fa-user-circle"></i> -->
-                        <img class="upload__image" src="/images/user-circle-solid.svg" alt="user">
 
+                    <!-- <button class="signup__btn">Sign in</button> -->
+                <a  class="google__btn" href="/auth/google">Sign in with google</a>
 
-
-                    </div>
-                    <p class="upload__text">Upload image </p>
-
-                    <input class="signup__username " id="usernameInput" name="username" type="text"
-                        placeholder="username">
-                    <br>
-
-                    <input class="signup__email " id="emailInput" name="email" type="text" placeholder="email">
-                    <br>
-
-
-                    <input class="signup__password" id="passwordInput" name="password" type="password"
-                        placeholder="password">
-                    <br>
-
-
-                    <input class="signup__file" type="file" style="display:none" id="fileInput" onchange="preview()"
-                        name="profileImage">
-                    <br>
-                    <ul class="error__list">
-                        <%if(error && error.length>0){%>
-                            <li class="error__item">
-                                <%=error%>
-                            </li>
-
-
-                            <%}%>
-
-                    </ul>
-
-
-
-
-
-                    <button class="signup__btn">Sign in</button>
-
-                </form>
-
-                <span class="container__bottom-text">
-
-                    Alredy have an account?
-                    <a class="container__login-button" href="/users/login">Login</a>
-                </span>
+          
+              
         </div>
         <div class="signup__right">
 

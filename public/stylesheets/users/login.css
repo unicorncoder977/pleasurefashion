@@ -1,3 +1,6 @@
+    html,body{
+        height:100%;
+    }
     body {
         background-color:lightblue;
         display: flex;
@@ -13,6 +16,7 @@
         width: 60%;
         display: flex;
         border-radius: 1.5em;
+        min-height:90%;
     }
 
     .signup__right {

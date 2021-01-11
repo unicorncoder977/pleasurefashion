@@ -241,6 +241,10 @@ body{
     .orders{
     padding:3em;
     }
+
+    .poster__container{
+        grid-gap: 4em;
+    }
     
 
 }
@@ -250,7 +254,7 @@ body{
 
 @media screen and (min-width:1200px){
     :root{
-        font-size:20px;
+        font-size:18px;
     }
 
     .header {
@@ -441,6 +445,32 @@ body{
     .orders{
     padding:3em;
     }
+
+    .poster {
+        max-width: 1000px;
+    }
+    .poster__container {
+        padding-left: -2;
+        grid-gap: 3em;
+        grid-template-columns: repeat(4, 1fr);
+    }
     
+    .showoff {
+        margin:0 auto;
+        width: 100%;
+        max-width: 800px;
+        height:1000px;
+  }
+    .showoff__image{
+        display:block;
+        width: 100%;
+        background-size: contain;
+        height:170vh;  
+    }
+    .showoff__text {
+        position: absolute;
+        top: 220px;
+        left: 100px;  
+    }
 
 }

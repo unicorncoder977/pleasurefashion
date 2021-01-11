@@ -25,9 +25,6 @@ exports.cart_get_products = async (req, res) => {
     }
 
 
-
-
-
 }
 
 
@@ -40,7 +37,7 @@ exports.cart_add_product = async (req, res) => {
     var productId = req.body.productId;
     var productSize = req.body.productSize;
     var productQuantity = req.body.productQuantity;
-    //    console.log(typeof(productQuantity));
+   
 
 
     try {

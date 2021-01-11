@@ -80,6 +80,7 @@
                 <section class="comments">
                     <h1 class="comments__title">comments</h1>
                     <form action="/products/<%=product._id%>/comments" class="comment__form" method="POST">
+                        <img class="comment__image comment__image--main" src="<%=currentUser.profileImage%>" alt="">
                         <input name="comment" type="text" class="comment__input" placeholder="add a coment...">
 
                     </form>
@@ -88,7 +89,7 @@
                         <%product.comments.forEach(function(comment){%>
                             <div class="comment">
 
-                                <img class="comment__image" src="/<%=comment.author.profileImage%>" alt="">
+                                <img class="comment__image" src="<%=comment.author.profileImage%>" alt="">
 
                                 <div class="comment__info">
                                     <h4 class="comment__name">

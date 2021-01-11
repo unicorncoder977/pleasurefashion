@@ -42,25 +42,24 @@
    
 
 }
-.size{
-    margin-bottom:1em;
-}
+
 
 .size__btn{
     border:2px solid black;
-    padding: 0.8em 0.9em;
+    padding: 0.6em 0.7em;
     font-size:1rem;
-    margin-right:1.2em;
+    margin-right:1em;
     color:black;
     text-transform:uppercase;
 
 }
 .size__btn:hover{
+    
     cursor:pointer;
 }
 .size__btn.size__btn--active{
    background-color: rgb(39, 38, 38);
-   color:white;
+   color:white;;
   
 }
 .cart__btn{
@@ -146,10 +145,16 @@ input[type=number]::-webkit-inner-spin-button{
 .comment__image{
     /* outline:2px solid red; */
     display:block;
-    width:3em;
-    height:3em;
+    width:2.5em;
+    height:2.5em;
     border-radius:50%;
     margin-right:1em;
+}
+.comment__image--main{
+    /* outline:2px solid red; */
+    /* margin-left:0.5em; */
+    width:4em;
+    height:4em;
 }
 
 .comment__input{
@@ -174,7 +179,7 @@ input[type=number]::-webkit-inner-spin-button{
   
     display:flex;
     /* justify-content:space-between; */
-    padding:0.5em;
+    padding:1em;
     margin-bottom:0.5em;
     /* align-items:center; */
 

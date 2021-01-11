@@ -282,3 +282,52 @@ main{
     text-align:center;
     letter-spacing:2.5px;
 }
+
+
+/* winter poster */
+.poster{
+    width:90%;
+    max-width:800px;
+}
+.poster__title {
+    text-transform: capitalize;
+    margin-bottom: 40px;
+}
+.poster__container {
+    padding-left: 2em;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 2em;
+}
+.poster__img {
+    display:block;
+    width: 100%;
+    height: auto;
+}
+
+
+
+
+.showoff {
+    width: 100%;
+    max-width: 1000px;
+    max-height: 1500px;
+    position: relative;
+    margin-bottom: 2em !important;
+}
+.showoff__image {
+    display:block;
+    width: 100%;
+    height: 80vh;
+    background-image: url("/images/tshirt1.jpg");
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow:3px 3px 5px rgba(0,0,0,0.5);
+}
+.showoff__text {
+    position: absolute;
+    top: 220px;
+    left: 100px;
+    font-size: 2rem;
+}

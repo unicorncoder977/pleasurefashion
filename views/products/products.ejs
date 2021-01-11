@@ -4,9 +4,6 @@
 <%-include('../partials/searchForm')%>
 
 
-
-
-
    <%if(products.length<1){%>
       <div class="not__found">
       <h4 class="not__found__text">no result found!!</h4>
@@ -46,30 +43,21 @@
                            </div>
 
                            <div class="heart">
-                                    <%if(product.wishlist.includes(currentUser._id)){%>
-                                       <i product_id='<%=product._id%>' class="added heart__icon fas fa-heart"></i>
-                                    
-                                       <%}else{%>
-                                          <i product_id='<%=product._id%>' class="heart__icon fas fa-heart"></i>
-                                    
-                                    
-                                          <%}%>
+                              <%if(currentUser){%>
+                                 <%if(product.wishlist.includes(currentUser._id)){%>
+                                    <i product_id='<%=product._id%>' class="added heart__icon fas fa-heart"></i>
+                                 
+                                    <%}else{%>
+                                       <i product_id='<%=product._id%>' class="heart__icon fas fa-heart"></i>
+                                 
+                                 
+                                       <%}%>
+
+                             <%}%>
+                                  
                            </div>
                      </div>
                     
-
-
-                  
-                     
-                  
-                
-                     
-                   
-
-                   
-                
-          
-                       
 
                   </span>
 

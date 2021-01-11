@@ -2,7 +2,7 @@ const port = process.env.PORT || 3000;
 const express = require('express');
 orderRoutes = require('./api/routes/orders');
 productRoutes = require('./api/routes/products');
-userRoutes = require('./api/routes/users');
+// authRoutes = require('./api/routes/auth');
 searchRoutes = require('./api/routes/search');
 tagRoutes = require('./api/routes/tags');
 commentRoutes = require('./api/routes/comments');
@@ -21,14 +21,15 @@ nodemailer = require('nodemailer');
 Cart = require('./api/models/cart');
 Razorpay = require('razorpay');
 
-
-
 const User = require('./api/models/users');
 const passport = require('passport');
+// const checkUserLoggedIn = require('./api/middlewares/checkUserLoggedIn');
 const localStrategy = require('passport-local');
-const checkAuth = require('./api/middlewares/check-auth');
+const GoogleStrategy = require('passport-google-oauth20').Strategy;
+// const checkAuth = require('./api/middlewares/check-auth');
 const checkCart = require('./api/middlewares/check-cart');
 // const checkWishlist = require('./api/middlewares/check-wishlist');
+
 
 
 var seeds = require('./seeds');
@@ -40,6 +41,9 @@ const wishlist = require('./api/models/wishlist');
 const app = express();
 app.set('view engine', 'ejs');
 
+
+
+
 // ==============
 //MiddleWares
 // ==============
@@ -48,9 +52,7 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(express.static('public'));
-app.use('/uploads', express.static('uploads'));
-
-
+// app.use('/uploads', express.static('uploads'));
 
 
 app.use(methodOverride('_method'));
@@ -59,7 +61,46 @@ app.use(morgan('dev'));
 // ==============
 //Passport Config
 // ==============
+passport.serializeUser(function (user, done) {
+    done(null, user);
+});
 
+passport.deserializeUser(function (user, done) {
+    done(null, user);
+});
+
+passport.use(new GoogleStrategy({
+    clientID: process.env.GOOGLE_CLIENT_ID,
+    clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+    callbackURL: process.env.CALLBACK_URL
+}, async (accessToken, refreshToken, profile, cb) => {
+    console.log("inside async");
+    var profileJson = profile._json;
+
+    const existingUser = await User.findOne({ googleID: profile.id });
+    if (existingUser) {
+        // we already have a record with the given profile ID
+        cb(null, existingUser);
+    }
+    else {
+        console.log("creating new user");
+        var newUser = new User({
+            _id: new mongoose.Types.ObjectId(),
+            googleID: profile.id,
+            username: profileJson.name,
+            email: profileJson.email,
+            profileImage: profileJson.picture
+
+        });
+        const savedUser = await newUser.save();
+        cb(null, savedUser);
+
+    }
+    console.log("outside async");
+}
+
+
+));
 
 app.use(
     require("express-session")({
@@ -77,6 +118,9 @@ passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 passport.use(new localStrategy(User.authenticate()));
 passport.use(User.createStrategy());
+
+
+
 
 
 // razorpay key ids
@@ -97,31 +141,64 @@ app.use((req, res, next) => {
     res.locals.currentUser = req.user;
     res.locals.success = req.flash('success');
     res.locals.error = req.flash('error');
-
     next();
 
 });
 
 
+// Middleware - Check user is Logged in
+const checkUserLoggedIn = (req, res, next) => {
+    req.user ? next() : res.sendStatus(401);
+}
 
 //routes which handle requests
 app.get('/', (req, res) => {
-    res.redirect('/users/signup');
+    res.render('users/signup');
 });
 
-
-app.get('/index', checkAuth, (req, res) => {
+app.get('/index', checkUserLoggedIn, (req, res) => {
     res.render('index');
 });
 
+app.get('/failed', (req, res) => {
+    res.send('<h1>Log in Failed :(</h1>')
+});
+
+
+
+//Protected Route.
+app.get('/profile', checkUserLoggedIn, (req, res) => {
+    console.log("hello");
+
+    res.redirect('/index');
+});
+
+// Auth Routes
+app.get('/auth/google', passport.authenticate('google', { scope: ['profile', 'email'] }));
+
+app.get('/auth/google/callback', passport.authenticate('google', { failureRedirect: '/failed' }),
+    function (req, res) {
+        res.redirect('/profile');
+    }
+);
+
+//Logout
+app.get('/logout', (req, res) => {
+    req.session = null;
+    req.logout();
+    res.redirect('/');
+});
+
+
+
 app.use('/products', productRoutes);
-app.use('/cart', checkAuth, checkCart, cartRoutes);
-app.use('/orders', checkAuth, orderRoutes);
-app.use('/wishlist', checkAuth, wishlistRoutes);
-app.use('/users', userRoutes);
+app.use('/cart', checkUserLoggedIn, checkCart, cartRoutes);
+app.use('/orders', checkUserLoggedIn, orderRoutes);
+app.use('/wishlist', checkUserLoggedIn, wishlistRoutes);
+
 app.use('/search', searchRoutes);
 app.use('/tags', tagRoutes);
-app.use('/comments', checkAuth, commentRoutes);
+app.use('/comments', checkUserLoggedIn, commentRoutes);
 
 
 app.get("/order", (req, res) => {
@@ -239,11 +316,15 @@ app.get('*', (req, res) => {
 });
 
 // wYumMAdD0xa1p8JU
+
+
+
 var dbUrl = process.env.DB_URL || 'mongodb://localhost/women-shop';
 
 //connecting to the mongo db database
-mongoose.connect(dbUrl,
-{ useUnifiedTopology: true }
+mongoose.connect(process.env.DB_URL,
+    { useUnifiedTopology: true },
+    { useNewUrlParser: true }
 );
 
 

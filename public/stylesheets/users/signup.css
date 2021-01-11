@@ -1,19 +1,23 @@
  
+    html,body{
+
+       height:100%
+    }
+    
     body {
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 100vh;
         font-size: 18px;
          background-color:lightblue;
     }
     .signup {
-     
         height:90%;
         width: 60%;
         display: flex;
         border-radius: 1.5em;
         box-shadow:2px 2px 4px rgba(0,0,0,0.5);
+        min-height:90%;
        
     }
     input.valid{
@@ -94,6 +98,12 @@
         font-size: 16px;
         font-weight: 500;
     }
+    .google__btn{
+        font-size:1.3rem;
+        background-color:purple;
+        padding:1em 0.5em;
+        color:white;
+    }
     .signup__btn:focus {
        outline:none;
        background-color: rgb(127, 126, 129);
@@ -102,7 +112,7 @@
         display: flex;
         justify-content: center;
         margin-top: 14px;
-font-size: 0.9rem;
+        font-size: 0.9rem;
     }
     .container__login-button {
         color: tomato;
