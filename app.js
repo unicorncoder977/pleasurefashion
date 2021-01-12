@@ -74,7 +74,7 @@ passport.use(new GoogleStrategy({
     clientSecret: process.env.GOOGLE_CLIENT_SECRET,
     callbackURL: process.env.CALLBACK_URL
 }, async (accessToken, refreshToken, profile, cb) => {
-    console.log("inside async");
+ 
     var profileJson = profile._json;
 
     const existingUser = await User.findOne({ googleID: profile.id });
@@ -83,7 +83,6 @@ passport.use(new GoogleStrategy({
         cb(null, existingUser);
     }
     else {
-        console.log("creating new user");
         var newUser = new User({
             _id: new mongoose.Types.ObjectId(),
             googleID: profile.id,
@@ -96,7 +95,6 @@ passport.use(new GoogleStrategy({
         cb(null, savedUser);
 
     }
-    console.log("outside async");
 }
 
 
