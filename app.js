@@ -199,6 +199,23 @@ app.use('/tags', tagRoutes);
 app.use('/comments', checkUserLoggedIn, commentRoutes);
 
 
+app.get('/paperwork/aboutUs', (req, res, next) => {
+    res.render('paperwork/aboutUs');
+});
+app.get('/paperwork/pricing', (req, res, next) => {
+    res.render('paperwork/pricing');
+});
+app.get('/paperwork/privacy', (req, res, next) => {
+    res.render('paperwork/privacy');
+});
+app.get('/paperwork/refundsAndCancellations', (req, res, next) => {
+    res.render('paperwork/refundsAndCancellations');
+});
+app.get('/paperwork/termsAndConditions', (req, res, next) => {
+    res.render('paperwork/termsAndConditions');
+});
+
+
 app.get("/order", (req, res) => {
     try {
         const options = {
