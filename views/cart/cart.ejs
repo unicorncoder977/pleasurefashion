@@ -19,7 +19,8 @@
 
                     <%cart.products.forEach(function(product){%>
 
-                        <div class="order">
+                        <div class="order"  data-aos="fade-up"  data-aos-once="true" data-aos-delay="200"
+                            data-aos-duration="400">
                             <a href="/products/<%=product._id%>">
                             <img class="order__image" src="<%=product.image%>">
                         </a>

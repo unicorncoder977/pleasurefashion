@@ -1,5 +1,5 @@
 <%-include('../partials/header')%>
-   
+
     <link rel="stylesheet" href="/stylesheets/products/details.css">
 
     <%if(error && error.length>0){%>
@@ -14,9 +14,11 @@
 
 
                     <div class="p__image">
-                        <img src="<%=product.image%>" alt="">
+                        <img src="<%=product.image%>" alt="" data-aos="zoom-in"  data-aos-once="true" data-aos-delay="200"
+                            data-aos-duration="400">
                     </div>
-                    <div class="info">
+                    <div class="info"   data-aos="fade-left"  data-aos-once="true" data-aos-delay="400"
+                            data-aos-duration="600">
                         <section class="details">
                             <h2 class="p__name">
                                 <%=product.name%>
@@ -62,7 +64,8 @@
                                     <section class="desc">
                                         <h2 class="desc__title">description</h2>
                                         <p class="desc__leading">
-                                           When choosing a dress,you want to find something that will make you feel cool and also looking good.
+                                            When choosing a dress,you want to find something that will make you feel
+                                            cool and also looking good.
                                         </p>
                                     </section>
 
@@ -132,5 +135,3 @@
             </div>
             <script src="/scripts/details.js"></script>
             <%-include('../partials/footer')%>
-         
-          

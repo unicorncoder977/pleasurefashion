@@ -42,6 +42,19 @@
     margin-right:auto;
 }
 
+/* .cart__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 1.7em;
+    width: 1.7em;
+    border-radius: 50%;
+  
+} */
+
+.cart {
+    font-size: 1.5rem;
+}
 .cart,.toogle{
     color:white;
 }

@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
         integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
         crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
     <link rel="stylesheet" href="/stylesheets/partials/footer.css">
     <link rel="stylesheet" href="/stylesheets/partials/header.css">
@@ -23,7 +24,7 @@
     <header class="header">
         <i id="sidebar-open" class="toogle fas fa-bars"></i>
         <a href="/index" class="brand__logo">pleasure</a>
-        <a href="/cart"><i class=" cart fas fa-shopping-cart"></i></a>
+        <a class="cart__container" href="/cart"><i class=" cart fas fa-shopping-cart"></i></a>
 
         <div class="overlay">
             <div class="close__container"><i id="sidebar-close" class="sidebar__close fas fa-times"></i></div>
@@ -41,9 +42,7 @@
             </div>
             <ul class="sidebar__list">
                 <%if(!currentUser){%>
-                    <li class="sidebar__item "><a href="/users/signup" class="sidebar__link">register/sign
-                            up</a></li>
-                    <li class="sidebar__item login-toogler"><a href="/users/login" class="sidebar__link">login</a></li>
+                    <li class="sidebar__item "><a href="/" class="sidebar__link">sign in</a></li>
 
                     <%}else{%>
                         <li class="sidebar__item"><a href="/logout" class="sidebar__link">logout <i
@@ -53,7 +52,7 @@
 
                             <li class="sidebar__item"><a href="/orders" class="sidebar__link">my orders</a></li>
                             <li class="sidebar__item"><a href="/wishlist" class="sidebar__link">wishlist<i
-                                        style="color:purple" class="sidebar__link__icon fas fa-heart"></i></a></li>
+                                        style="color:hotpink" class="sidebar__link__icon fas fa-heart"></i></a></li>
                             <li class="sidebar__item"><a id="submenu-toogler" href="#" class="sidebar__link">categories
                                     <i style="color:black" class=" sidebar__link__icon fas fa-chevron-down"></i></a>
                                 <ul id="submenu" class="submenu">

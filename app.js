@@ -74,7 +74,7 @@ passport.use(new GoogleStrategy({
     clientSecret: process.env.GOOGLE_CLIENT_SECRET,
     callbackURL: process.env.CALLBACK_URL
 }, async (accessToken, refreshToken, profile, cb) => {
- 
+
     var profileJson = profile._json;
 
     const existingUser = await User.findOne({ googleID: profile.id });
@@ -154,7 +154,7 @@ app.get('/', (req, res) => {
     res.render('users/signup');
 });
 
-app.get('/index', checkUserLoggedIn, (req, res) => {
+app.get('/index', (req, res) => {
     res.render('index');
 });
 
