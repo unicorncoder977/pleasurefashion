@@ -2,7 +2,6 @@ const port = process.env.PORT || 3000;
 const express = require('express');
 orderRoutes = require('./api/routes/orders');
 productRoutes = require('./api/routes/products');
-// authRoutes = require('./api/routes/auth');
 searchRoutes = require('./api/routes/search');
 tagRoutes = require('./api/routes/tags');
 commentRoutes = require('./api/routes/comments');
@@ -26,9 +25,7 @@ const passport = require('passport');
 // const checkUserLoggedIn = require('./api/middlewares/checkUserLoggedIn');
 const localStrategy = require('passport-local');
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
-// const checkAuth = require('./api/middlewares/check-auth');
 const checkCart = require('./api/middlewares/check-cart');
-// const checkWishlist = require('./api/middlewares/check-wishlist');
 
 
 
@@ -48,11 +45,9 @@ app.set('view engine', 'ejs');
 //MiddleWares
 // ==============
 
-//to turn req body into a js object
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(express.static('public'));
-// app.use('/uploads', express.static('uploads'));
 
 
 app.use(methodOverride('_method'));
@@ -79,7 +74,6 @@ passport.use(new GoogleStrategy({
 
     const existingUser = await User.findOne({ googleID: profile.id });
     if (existingUser) {
-        // we already have a record with the given profile ID
         cb(null, existingUser);
     }
     else {
@@ -172,7 +166,10 @@ app.get('/profile', checkUserLoggedIn, (req, res) => {
 });
 
 // Auth Routes
-app.get('/auth/google', passport.authenticate('google', { scope: ['profile', 'email'] }));
+
+
+
+app.get('/auth / google', passport.authenticate('google', { scope: ['profile', 'email'] }));
 
 app.get('/auth/google/callback', passport.authenticate('google', { failureRedirect: '/failed' }),
     function (req, res) {
