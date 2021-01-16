@@ -20,8 +20,6 @@ exports.orders_get_all = async (req, res, next) => {
 
 }
 exports.orders_create_order = async (req, res, next) => {
-    // console.log(req.body);
-
 
     const newOrder = new Order({
         _id: new mongoose.Types.ObjectId(),

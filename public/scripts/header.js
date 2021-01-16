@@ -19,7 +19,6 @@ sidebarOpenBtn.addEventListener('click', () => {
 sidebarCloseBtn.addEventListener('click', () => {
     sidebar.classList.remove('active');
     document.body.style.position = 'static';
-    // overlay.style.display = 'none';
     overlay.style.display = "none";
     submenu.classList.remove('active');
 

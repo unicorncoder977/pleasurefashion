@@ -1,3 +1,6 @@
+.aos-init:not(.aos-animate):after {
+position: fixed;
+}
 .not__found {
 	text-align: center;
 	padding: 1em 2em 0;

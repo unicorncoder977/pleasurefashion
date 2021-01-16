@@ -13,24 +13,6 @@ const checkUserLoggedIn = (req, res, next) => {
 }
 
 router.get('/', productController.products_get_all);
-router.get('/data/:productId', async (req, res) => {
-    const productId = req.params.productId;
-
-    try {
-
-        const product = await Product.findById(productId).populate('comments').exec();
-        res.json({
-            product: product
-        });
-
-    }
-    catch (err) {
-        res.status(500).json({
-            error: err
-        });
-        next(err);
-    }
-});
 
 router.post('/:productId/comments', productController.product_create_comment);
 

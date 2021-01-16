@@ -9,8 +9,7 @@ exports.products_get_all = async (req, res, next) => {
         const products = await Product.find().exec();
         res.status(200).json({
             products: products
-        })
-        // res.render('home.ejs', { products: products });
+        });
 
     }
     catch (err) {
@@ -99,7 +98,6 @@ exports.product_create_comment = async (req, res, next) => {
 
 
         const createdComment = await newComment.save();
-        console.log(createdComment);
         foundProduct.comments.push(createdComment);
 
         const savedProduct = foundProduct.save();
