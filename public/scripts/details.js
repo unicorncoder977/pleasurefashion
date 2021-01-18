@@ -102,7 +102,6 @@ buyBtn.addEventListener('click', async (e) => {
         productQuantity,
         productSize
     }
-    console.log(newOrder);
 
     const response = await axios({
         method: 'post',

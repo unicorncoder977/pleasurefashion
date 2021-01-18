@@ -34,6 +34,12 @@ var seeds = require('./seeds');
 const app = express();
 app.set('view engine', 'ejs');
 
+mongoose.set('useFindAndModify', false);
+mongoose.set('useNewUrlParser', true);
+mongoose.set('useFindAndModify', false);
+mongoose.set('useCreateIndex', true);
+mongoose.set('useUnifiedTopology', true);
+
 
 
 

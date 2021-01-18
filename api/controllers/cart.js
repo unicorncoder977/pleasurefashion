@@ -92,7 +92,7 @@ exports.cart_delete_product = async (req, res) => {
                     arr.push(product);
                 }
             });
-            console.log(arr);
+            // console.log(arr);
             Cart.findOneAndUpdate({ owner: req.user }, { $set: { products: arr } }).exec()
                 .then(response => res.redirect('/cart'))
                 .catch(err => console.log(err));

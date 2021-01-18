@@ -142,8 +142,9 @@ main {
 }
 
 .showoff {
-	width: 100%;
+	width: 90%;
 	max-width: 90vw;
+	margin:0 auto;
 }
 .showoff__image {
 	display: block;
