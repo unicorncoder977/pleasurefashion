@@ -17,6 +17,9 @@ router.get('/refundsAndCancellations', (req, res, next) => {
 router.get('/termsAndConditions', (req, res, next) => {
     res.render('paperwork/termsAndConditions');
 });
+router.get('/developers', (req, res, next) => {
+    res.render('paperwork/developers');
+});
 
 
 module.exports = router;

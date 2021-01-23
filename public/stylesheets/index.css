@@ -54,7 +54,7 @@
 .carousel__cell {
 	width: 150px;
 	height: 250px;
-	margin-right: 1em;
+	margin-right: 1.5em;
 }
 
 .carousel__image {
@@ -63,6 +63,7 @@
 	height: 85%;
 	border-radius: 8px;
 }
+
 .carousel__title {
 	font-size: 1.2rem;
 	font-weight: 300;
@@ -74,6 +75,7 @@
 .flickity-button {
 	display: none;
 }
+
 .flickity-dots {
 	display: none;
 }
@@ -87,11 +89,12 @@ main {
 
 .categories__container {
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(120px, 2fr));
+	grid-template-columns: repeat(auto-fit, minmax(150px, 160px));
 	grid-auto-rows: 260px;
 	grid-gap: 1.5em;
 }
 .category__link {
+	width: 100%;
 	padding: 1em;
 }
 .category__image {
@@ -131,20 +134,28 @@ main {
 }
 .poster__container {
 	display: grid;
-	grid-template-columns: repeat(2, 1fr);
-	grid-gap: 3em;
+	grid-template-columns: repeat(2,40vw);
+	grid-auto-rows: 35vh;
+	grid-gap: 1.5em;
+}
+
+.poster__link {
+	outline: 2px solid red;
+	display: block;
+	width: 100%;
+	height: 100%;
 }
 .poster__img {
 	display: block;
 	border-radius: 8px;
 	width: 100%;
-	height: auto;
+	height: 100%;
 }
 
 .showoff {
 	width: 90%;
 	max-width: 90vw;
-	margin:0 auto;
+	margin: 0 auto;
 }
 .showoff__image {
 	display: block;

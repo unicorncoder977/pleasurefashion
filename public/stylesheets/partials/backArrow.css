@@ -3,6 +3,17 @@
     margin-bottom:1em;
 }
 .arrow__icon{
-    color:black;
+    color:grey;
     font-size:2.3rem;
+    transition:all 0.1s ease-in;
+    transform:scale(1);
+    
+}
+
+
+.arrow__icon:hover{
+
+    cursor:pointer;
+    color:royalblue;
+    transform:scale(1.2);
 }

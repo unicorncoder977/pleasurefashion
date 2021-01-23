@@ -1,5 +1,5 @@
 .footer {
-	background-color: #252527;
+	background-color:#aa96da;
 	color: white;
 	text-align: center;
 	padding: 3em;
@@ -63,5 +63,5 @@
 }
 .promises__title {
 	text-transform: uppercase;
-	color: hotpink;
+	color: #ffffd2;
 }

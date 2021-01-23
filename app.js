@@ -323,15 +323,29 @@ app.get('*', (req, res) => {
     })
 });
 
-
-
+// GIkot1VJOuYr6D5l
 // var dbUrl = process.env.DB_URL || 'mongodb://localhost/women-shop';
+// ssbcap---mongodb + srv://rajneesh:h8RwplrG59WT0O3z@pleasurecluster.rktoo.mongodb.net/test?retryWrites=true&w=majority
+
+
+//rajverma---mongodb + srv://rajneesh:wYumMAdD0xa1p8JU@cluster0.iqpsk.mongodb.net/test?retryWrites=true&w=majority
 
 //connecting to the mongo db database
-mongoose.connect(process.env.DB_URL,
-    { useUnifiedTopology: true },
-    { useNewUrlParser: true }
-);
+const connect = async () => {
+    const dbUrl = process.env.DB_URL;
+   
+
+    return mongoose.connect(dbUrl,
+        { useUnifiedTopology: true },
+        { useNewUrlParser: true }
+    );
+
+}
+
+connect().then(() => {
+    console.log("connected to db");
+})
+    .catch(err => console.log(err));
 
 
 

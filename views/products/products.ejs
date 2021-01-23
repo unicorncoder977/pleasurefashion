@@ -23,47 +23,66 @@
 
 
                   <span  class="product">
+                     <div class="product__header">
+                           <a href="/products/<%=product._id%>" class="product__link">
+                       
+               
+                              
+                              <img src="<%=product.image%>" alt="" class="product__image" data-aos="fade-up" data-aos-delay="100"
+                                 data-
+                                 aos-once="true" data-aos-duration="500">
+                  
 
-                     <div class="image__container">
-                       <a href="/products/<%=product._id%>">
-                     <img src="<%=product.image%>" alt="" class="product__image" data-aos="fade-up" data-aos-delay="100" data-aos-once="true" data-aos-duration="500">
-                  </a>
+                  
+                              </a>
 
                      </div>
 
+                    
+                    
                      <div class="product__footer">
-                           <div class="product__info">
                               <h1 class="product__name">
-                                 <%=product.name%>
+                                
+                                 <%=product.name.substring(0,20)%>
+                                
                               </h1>
-                           
-                           
+
+                              <div class="product__down">
                               <span class="product__price">₹<%=product.price%></span>
+                              <span class="heart">
+                                 <%if(currentUser){%>
+                                    <%if(product.wishlist.includes(currentUser._id)){%>
+                                    
+                                       <i product_id='<%=product._id%>' class="added heart__icon fas fa-heart"></i>
+                              
+                                       <%}else{%>
+                                          <i product_id='<%=product._id%>' class="heart__icon fas fa-heart"></i>
+                              
+                              
+                                          <%}%>
+                              
+                                             <%}%>
+                              
+                                       </span>
+
+
+                              </div>
                            
-                           </div>
-
-                           <div class="heart">
-                              <%if(currentUser){%>
-                                 <%if(product.wishlist.includes(currentUser._id)){%>
-                                    <i product_id='<%=product._id%>' class="added heart__icon fas fa-heart"></i>
-                                 
-                                    <%}else{%>
-                                       <i product_id='<%=product._id%>' class="heart__icon fas fa-heart"></i>
-                                 
-                                 
-                                       <%}%>
-
-                             <%}%>
-                                  
-                           </div>
+                           
+                           
                      </div>
+
+                          
+                  </span>
+                 
                     
 
-                  </span>
+               
 
 
                   <%});%>
             </div>
+          
 
          </section>
 
