@@ -26,7 +26,9 @@ exports.cart_get_products = async (req, res) => {
 }
 
 
+console.log(process.env.PORT);
 exports.cart_delete_products_all = async (req, res) => {
+    
     const response = await Cart.findOneAndRemove({ owner: req.user }).exec();
 }
 exports.cart_add_product = async (req, res) => {
@@ -58,11 +60,7 @@ exports.cart_add_product = async (req, res) => {
 
         foundCart.products.push(newProduct);
 
-        foundCart.save().then()
-            .catch(err => console.log(err));
-
-
-
+        foundCart.save().then().catch(err => res.send(err));
 
     }
 
@@ -92,7 +90,6 @@ exports.cart_delete_product = async (req, res) => {
                     arr.push(product);
                 }
             });
-            // console.log(arr);
             Cart.findOneAndUpdate({ owner: req.user }, { $set: { products: arr } }).exec()
                 .then(response => res.redirect('/cart'))
                 .catch(err => console.log(err));

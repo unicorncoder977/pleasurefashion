@@ -27,11 +27,22 @@ const localStrategy = require('passport-local');
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const checkCart = require('./api/middlewares/check-cart');
 var seeds = require('./seeds');
+const compression = require('compression');
+// const redis = require('redis');
+// const  REDIS_PORT = process.env.REDIS_PORT || 6379;
+// const redisClient = redis.createClient(REDIS_PORT);
+const path = require('path');
+
+// redisClient.on('connect', () => {
+//     console.log('connected to redis server');
+    
+// });
 
 
 // seeds();
 
 const app = express();
+app.use(compression());
 app.set('view engine', 'ejs');
 
 mongoose.set('useFindAndModify', false);
@@ -49,8 +60,8 @@ mongoose.set('useUnifiedTopology', true);
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-app.use(express.static('public'));
-
+// app.use(express.static('public'));
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(methodOverride('_method'));
 app.use(morgan('dev'));
@@ -139,14 +150,6 @@ app.use((req, res, next) => {
 
 });
 
-// app.use(function (req, res, next) {
-//     if (req.session.user == null) {
-//         // if user is not logged-in redirect back to login page //
-//         res.redirect('/');
-//     } else {
-//         next();
-//     }
-// });
 
 
 
@@ -323,18 +326,12 @@ app.get('*', (req, res) => {
     })
 });
 
-// GIkot1VJOuYr6D5l
-// var dbUrl = process.env.DB_URL || 'mongodb://localhost/women-shop';
-// ssbcap---mongodb + srv://rajneesh:h8RwplrG59WT0O3z@pleasurecluster.rktoo.mongodb.net/test?retryWrites=true&w=majority
 
-
-//rajverma---mongodb + srv://rajneesh:wYumMAdD0xa1p8JU@cluster0.iqpsk.mongodb.net/test?retryWrites=true&w=majority
 
 //connecting to the mongo db database
 const connect = async () => {
-    const dbUrl = process.env.DB_URL;
+    const dbUrl = process.env.DB_URL ;
    
-
     return mongoose.connect(dbUrl,
         { useUnifiedTopology: true },
         { useNewUrlParser: true }
@@ -343,9 +340,8 @@ const connect = async () => {
 }
 
 connect().then(() => {
-    console.log("connected to db");
-})
-    .catch(err => console.log(err));
+    console.log("connected to mongo atlas db");
+}).catch(err => console.log(err));
 
 
 
