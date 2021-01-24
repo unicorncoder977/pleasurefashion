@@ -51,6 +51,8 @@
 	text-transform: capitalize;
 }
 
+
+
 .carousel__cell {
 	width: 150px;
 	height: 250px;
@@ -83,13 +85,14 @@
 main {
 	display: grid;
 	grid-gap: 3em;
-	padding-top: 2em;
-	width: min(90%, 1100px);
+	padding-top: 1em;
+	padding-left:1em;
+	width: min(90%, 1200px);
 }
 
 .categories__container {
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(150px, 160px));
+	grid-template-columns: repeat(2,1fr);
 	grid-auto-rows: 260px;
 	grid-gap: 1.5em;
 }

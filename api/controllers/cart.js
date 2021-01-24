@@ -26,7 +26,7 @@ exports.cart_get_products = async (req, res) => {
 }
 
 
-console.log(process.env.PORT);
+
 exports.cart_delete_products_all = async (req, res) => {
     
     const response = await Cart.findOneAndRemove({ owner: req.user }).exec();

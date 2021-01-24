@@ -32,8 +32,8 @@ body {
   font-family: "Open Sans", sans-serif;
 }
 
-.main,
-.sidebar__profile,
+
+.main,.sidebar__profile,
 .hero__text,
 .hero__image {
   margin: 0 auto;
