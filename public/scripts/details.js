@@ -39,6 +39,7 @@ var likeBtns = document.querySelectorAll('.like__btn');
 // });
 
 
+
 sizeBtns[0].classList.add('size__btn--active');
 
 sizeBtns.forEach(sizeBtn => {
@@ -53,7 +54,6 @@ sizeBtns.forEach(sizeBtn => {
 
     });
 });
-
 
 
 

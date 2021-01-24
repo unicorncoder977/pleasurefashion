@@ -8,7 +8,7 @@ const productSchema = mongoose.Schema({
     price: { type: Number, required: true },
     units: { type: Number, default: 10 },
     description: { type: String, required: true },
-    sizes: [],  
+    size: [],  
     comments: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Comment' }],
     tags: [],
     wishlist:[]

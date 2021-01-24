@@ -14,11 +14,11 @@
 
 
                     <div class="p__image">
-                        <img src="<%=product.image%>" alt="" data-aos="zoom-in"  data-aos-once="true" data-aos-delay="200"
-                            data-aos-duration="200">
+                        <img src="<%=product.image%>" alt="" data-aos="zoom-in" data-aos-once="true"
+                            data-aos-delay="200" data-aos-duration="200">
                     </div>
-                    <div class="info"   data-aos="fade-left"  data-aos-once="true" data-aos-delay="300"
-                            data-aos-duration="500">
+                    <div class="info" data-aos="fade-left" data-aos-once="true" data-aos-delay="300"
+                        data-aos-duration="500">
                         <section class="details">
                             <h2 class="p__name">
                                 <%=product.name%>
@@ -38,36 +38,42 @@
                                 <%}%>
 
 
+                                  
+                                        <section class="size">
+                                            <%product.size.forEach(function(size){%>
+                                                <span size="<%=size%>" class="size__btn">
+                                                    <%=size%>
+                                                </span>
+                                                <%})%>
+
+                                        </section>
+
+                                       
 
 
 
-                                    <section class="size">
-                                        <%product.sizes.forEach(function(size){%>
-                                            <span size="<%=size%>" class="size__btn">
-                                                <%=size%>
-                                            </span>
-                                            <%})%>
-
-                                    </section>
 
 
-                                    <select class="cart__quantity" name="quantity" id="quantity">
-                                        <option value="1">1</option>
-                                        <option value="2">2</option>
-                                        <option value="3">3</option>
-                                    </select>
-                                    <button product-id="<%=product._id%>" class="cart__btn">Add to cart</button>
-
-                                    <button product-id="<%=product._id%>" class="buy__btn">buy this</button>
 
 
-                                    <section class="desc">
-                                        <h2 class="desc__title">description</h2>
-                                        <p class="desc__leading">
-                                            When choosing a dress,you want to find something that will make you feel
-                                            cool and also looking good.
-                                        </p>
-                                    </section>
+                                            <select class="cart__quantity" name="quantity" id="quantity">
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                            </select>
+                                            <button product-id="<%=product._id%>" class="cart__btn">Add to cart</button>
+
+                                            <button product-id="<%=product._id%>" class="buy__btn">buy this</button>
+
+
+                                            <section class="desc">
+                                                <h2 class="desc__title">description</h2>
+                                                <p class="desc__leading">
+                                                    When choosing a dress,you want to find something that will make you
+                                                    feel
+                                                    cool and also looking good.
+                                                </p>
+                                            </section>
 
 
 
