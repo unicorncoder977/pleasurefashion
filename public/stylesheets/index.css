@@ -33,7 +33,7 @@
 	margin-top: 2em;
 	width: 90%;
 	height: 500px;
-	background: url('../images/hero-2.jpg');
+	background: url('https://i.pinimg.com/564x/4e/4a/86/4e4a86af0be4a9e7cef26f25bc948e42.jpg');
 	background-position: top;
 	border-radius: 16px;
 	background-repeat: no-repeat;
@@ -93,20 +93,22 @@ main {
 .categories__container {
 	display: grid;
 	grid-template-columns: repeat(2,1fr);
-	grid-auto-rows: 260px;
-	grid-gap: 1.5em;
+	grid-auto-rows: 40vh;
+	grid-gap: 2em;
 }
 .category__link {
 	width: 100%;
-	padding: 1em;
+	height:100%;
+
 }
 .category__image {
 	border-radius: 8px;
 	width: 100%;
-	height: 90%;
+	height:90%;
 	display: block;
 }
 .category__title {
+	height:10%;
 	text-align: center;
 	font-size: 1.1rem;
 	font-weight: 400;
@@ -138,8 +140,8 @@ main {
 .poster__container {
 	display: grid;
 	grid-template-columns: repeat(2,40vw);
-	grid-auto-rows: 35vh;
-	grid-gap: 1.5em;
+	grid-auto-rows: 32vh;
+	grid-gap:2em;
 }
 
 .poster__link {
@@ -147,11 +149,12 @@ main {
 	display: block;
 	width: 100%;
 	height: 100%;
+
 }
 .poster__img {
 	display: block;
 	border-radius: 8px;
-	width: 100%;
+	max-width: 100%;
 	height: 100%;
 }
 
@@ -163,10 +166,10 @@ main {
 .showoff__image {
 	display: block;
 	width: 100%;
-	height: 63vh;
+	height: 70vh;
 	border-radius: 8px;
 	background-position: top;
 	background-repeat: no-repeat;
 	background-size: cover;
-	padding: 2em;
+	/* padding: 2em; */
 }

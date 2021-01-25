@@ -80,7 +80,7 @@ body {
   .hero__image {
     width: 500px;
     height: 700px;
-    background: url("../images/intro.jpg");
+   
     background-position: center;
     border-radius: 16px;
     background-repeat: no-repeat;
@@ -244,7 +244,7 @@ body {
   .hero__image {
     width: 500px;
     height: 700px;
-    background: url("../images/intro.jpg");
+ 
     background-position: center;
     border-radius: 16px;
     background-repeat: no-repeat;

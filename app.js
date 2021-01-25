@@ -1,6 +1,12 @@
 const port = process.env.PORT || 3000;
+
 const express = require('express');
-orderRoutes = require('./api/routes/orders');
+const app = express();
+
+
+
+
+const orderRoutes = require('./api/routes/orders');
 productRoutes = require('./api/routes/products');
 searchRoutes = require('./api/routes/search');
 tagRoutes = require('./api/routes/tags');
@@ -8,14 +14,15 @@ commentRoutes = require('./api/routes/comments');
 cartRoutes = require('./api/routes/cart');
 wishlistRoutes = require('./api/routes/wishlist');
 paperWorkRoutes = require('./api/routes/paperwork');
+
 mongoose = require('mongoose');
 bodyParser = require('body-parser');
 methodOverride = require('method-override');
 flash = require('connect-flash');
 session = require('express-session');
-seedDb = require('./seeds');
+
 morgan = require('morgan');
-axios = require('axios');
+// axios = require('axios');
 dotenv = require('dotenv').config();
 nodemailer = require('nodemailer');
 Cart = require('./api/models/cart');
@@ -23,27 +30,18 @@ Razorpay = require('razorpay');
 
 const User = require('./api/models/users');
 const passport = require('passport');
-const localStrategy = require('passport-local');
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const checkCart = require('./api/middlewares/check-cart');
-var seeds = require('./seeds');
+
 const compression = require('compression');
-// const redis = require('redis');
-// const  REDIS_PORT = process.env.REDIS_PORT || 6379;
-// const redisClient = redis.createClient(REDIS_PORT);
+
 const path = require('path');
 
-// redisClient.on('connect', () => {
-//     console.log('connected to redis server');
-    
-// });
-
-
-// seeds();
-
-const app = express();
 app.use(compression());
 app.set('view engine', 'ejs');
+
+
+
 
 mongoose.set('useFindAndModify', false);
 mongoose.set('useNewUrlParser', true);
@@ -60,7 +58,6 @@ mongoose.set('useUnifiedTopology', true);
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-// app.use(express.static('public'));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(methodOverride('_method'));
@@ -118,10 +115,6 @@ app.use(
 app.use(flash());
 app.use(passport.initialize());
 app.use(passport.session());
-
-passport.serializeUser(User.serializeUser());
-passport.deserializeUser(User.deserializeUser());
-passport.use(new localStrategy(User.authenticate()));
 passport.use(User.createStrategy());
 
 
@@ -163,7 +156,7 @@ const checkUserLoggedIn = (req, res, next) => {
     req.user ? next() : res.redirect('/');
 }
 
-app.get('/index',checkUserLoggedIn, (req, res) => {
+app.get('/index', checkUserLoggedIn, (req, res) => {
     res.render('index');
 });
 
@@ -175,7 +168,6 @@ app.get('/failed', (req, res) => {
 
 //Protected Route.
 app.get('/profile', checkUserLoggedIn, (req, res) => {
-    console.log("hello");
 
     res.redirect('/index');
 });
@@ -321,17 +313,15 @@ app.post("/capture/:paymentId", (req, res) => {
 
 //404 page not found
 app.get('*', (req, res) => {
-    res.status(404).json({
-        message: "Page not found"
-    })
+    res.render('notFound');
 });
 
 
 
 //connecting to the mongo db database
 const connect = async () => {
-    const dbUrl = process.env.DB_URL ;
-   
+    const dbUrl = process.env.DB_URL;
+
     return mongoose.connect(dbUrl,
         { useUnifiedTopology: true },
         { useNewUrlParser: true }
