@@ -12,25 +12,22 @@
   padding: 0.8em;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-auto-rows: 42vh;
+  grid-auto-rows: 45vh;
   grid-gap:2em;
 }
 
 .product__header {
-  border:2px solid blue;
   width: 100%;
-  height: 70%;
+  height: 75%;
 }
 .product__footer {
-  border:2px solid green;
-  height: calc(30%-1em);
+  height: calc(25%-1em);
   padding: 0.5em;
 }
 .products {
   padding: 1em;
 }
 .product {
-  outline: 2px solid red;
   width:100%;
   height:100%;
 }
