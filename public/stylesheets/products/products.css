@@ -11,8 +11,8 @@
 .products__container {
   padding: 0.8em;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-auto-rows: 45vh;
+  grid-template-columns: repeat(auto-fit,minmax(25vw,1fr));
+  grid-auto-rows: 38vh;
   grid-gap:2em;
 }
 
@@ -28,14 +28,15 @@
   padding: 1em;
 }
 .product {
+  display: block;
   width:100%;
   height:100%;
 }
 
 .product__image {
-  max-width: 100%;
+  width:100%;
+ 
   height: 100%;
-  object-fit:cover;
   display: block;
   border-radius: 8px;
 }

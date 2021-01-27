@@ -35,10 +35,9 @@
 	height: 500px;
 	background: url('https://i.pinimg.com/564x/4e/4a/86/4e4a86af0be4a9e7cef26f25bc948e42.jpg');
 	background-position: top;
-	border-radius: 16px;
+	background-size:cover;
+	border-radius: 8px;
 	background-repeat: no-repeat;
-	background-size: 100%;
-	position: relative;
 	z-index: -3;
 	overflow: hidden;
 }
@@ -54,15 +53,15 @@
 
 
 .carousel__cell {
-	width: 150px;
-	height: 250px;
+	width: 32vw;
+	height: 32vh;
 	margin-right: 1.5em;
 }
 
 .carousel__image {
 	display: block;
 	max-width: 100%;
-	height: 85%;
+	height: 80%;
 	border-radius: 8px;
 }
 
@@ -84,21 +83,30 @@
 
 main {
 	display: grid;
-	grid-gap: 3em;
-	padding-top: 1em;
-	padding-left:1em;
-	width: min(90%, 1200px);
+	grid-gap: 2.5em;
+    padding:1em;
+	/* width:90%; */
+	margin:0 auto;
+	max-width:1200px;
+
+}
+main section{
+	width:100%;
+	overflow:hidden;
 }
 
 .categories__container {
+
 	display: grid;
 	grid-template-columns: repeat(2,1fr);
-	grid-auto-rows: 40vh;
-	grid-gap: 2em;
+	grid-auto-rows: 35vh;
+	padding:0 0 1em 0;
+	grid-gap: 2em ;
 }
 .category__link {
 	width: 100%;
 	height:100%;
+	display:block;
 
 }
 .category__image {
@@ -136,11 +144,12 @@ main {
 .poster__title {
 	text-transform: capitalize;
 	margin-bottom: 1.5em;
+
 }
 .poster__container {
-	display: grid;
-	grid-template-columns: repeat(2,40vw);
-	grid-auto-rows: 32vh;
+	display:grid;
+	grid-template-columns:repeat(auto-fit,minmax(30vw,1fr));
+	grid-auto-rows:32vh;
 	grid-gap:2em;
 }
 
@@ -158,18 +167,28 @@ main {
 	height: 100%;
 }
 
-.showoff {
-	width: 90%;
-	max-width: 90vw;
-	margin: 0 auto;
+.showoff__container {
+	display:grid;
+	grid-template-columns:repeat(auto-fit,minmax(45vw,1fr));
+	grid-auto-rows:70vh;
+	grid-gap:2em;
+	
+} 
+
+.showoff__link{
+
+	width:100%;
+	height:100%;
+	display:block;
+
 }
 .showoff__image {
+	width:100%;
+	height:100%;
 	display: block;
-	width: 100%;
-	height: 70vh;
 	border-radius: 8px;
-	background-position: top;
-	background-repeat: no-repeat;
-	background-size: cover;
-	/* padding: 2em; */
+	object-fit: cover;
+	object-position: top;
+
+
 }
