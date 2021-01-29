@@ -37,17 +37,17 @@ position: fixed;
 .wrapper__total {
 	font-size: 1.5rem;
 	font-weight: 300;
-	color: lightslategray;
+	color: var(--cart--total-title-text);
 }
 .total__amount {
 	font-size: 1.7rem;
 	font-weight: 700;
-	color: black;
+	color: var(--cart--total-amount-text);
 }
 .checkout__btn {
 	font-size: 1.3rem;
-	background-color: black;
-	color: white;
+	background-color: var(--cart-checkoutBtn-bg);
+	color: var(--cart-checkoutBtn-text);
 	margin-left: 1em;
 
 	padding: 0.3em 1em;
@@ -88,8 +88,8 @@ position: fixed;
 	margin-top: 1.7em;
 	font-size: 1rem;
 	text-transform: uppercase;
-	border-bottom: 3px solid orange;
-	color: gray;
+	border-bottom: 3px solid var(--cart-size-border);
+	color: var(--cart-size-text);
 }
 
 .order__info {
@@ -114,7 +114,7 @@ position: fixed;
 }
 
 .order__quantity {
-	color: white;
+	color: var(--cart-quantity-text);
 }
 
 .order__quantity::before {
@@ -124,7 +124,7 @@ position: fixed;
 	height: 2em;
 	transform: translate(-20%, -20%);
 	border-radius: 50%;
-	background-color: gold;
+	background-color: var(--cart-quantity-bg);
 	z-index: -5;
 }
 
@@ -132,10 +132,15 @@ position: fixed;
 	width: 4em;
 	height: 2em;
 	font-size: 1.2rem;
-	background-color: gray;
-	color: white;
 
+	background-color: var(--cart-deleteBtn-hover-bg);
+	color: var(--cart-deleteBtn-hover-text);
 	padding: 0.3em 0.5em;
 	border: none;
 	border-radius: 8px;
+}
+
+.order__delete__btn:hover,.order__delete__btn:focus{
+	background-color: var(--cart-deleteBtn-bg);
+	color: var(--cart-deleteBtn-text);
 }
