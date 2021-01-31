@@ -23,7 +23,7 @@
                             <h2 class="p__name">
                                 <%=product.name%>
                             </h2>
-                            <p class="p__price">
+                            <p class="p__price" product-price="<%=product.price%>">
                                 ₹<%=product.price%>
                             </p>
 
@@ -63,7 +63,10 @@
                                             </select>
                                             <button product-id="<%=product._id%>" class="cart__btn">Add to cart</button>
 
-                                            <button product-id="<%=product._id%>" class="buy__btn">buy this</button>
+                                           
+                                                 <a  href="/buy" product-id="<%=product._id%>" class="buy__btn">buy this</a>
+                                          
+
 
 
                                             <section class="desc">

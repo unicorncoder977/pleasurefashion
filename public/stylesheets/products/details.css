@@ -1,6 +1,6 @@
 .wrapper {
-  margin-top: 1em;
-  padding: 1em;
+  margin:2em auto;
+  width:90%;
 }
 .info {
   display: grid;
@@ -28,7 +28,7 @@
 }
 .p__stock {
   font-size: 1.7rem;
-  color: #2ecc71;
+  color:var(--stock-text);
   margin-bottom: 0.5em;
 }
 
@@ -52,12 +52,10 @@
   color: var(--size-active-text);
 }
 
-.cart__btn {
+.cart__btn,.buy__btn {
   font-size: 1.3rem;
   font-weight: 300;
-  padding: 0.6em 0.8em;
   color: white;
-  background-color: #3e4149;
   text-transform: capitalize;
   border: none;
   border-radius: 8px;
@@ -65,6 +63,13 @@
   position: relative;
   transition: all 0.1 ease-in;
   opacity: 1;
+  padding: 0.6em 0.8em;
+
+}
+
+.cart__btn{
+  background-color: #3e4149;
+
 }
 
 .cart__btn:hover {
@@ -89,18 +94,13 @@ input[type="number"]::-webkit-inner-spin-button {
   font-size: 1rem;
 }
 .buy__btn {
-  /* width:100%; */
-  font-size: 1.3rem;
-  font-weight: 700;
-  color: var(--buyBtn-text);
+  display:flex;
+  justify-content: center;
+  align-items: center;
   background-color: var(--buyBtn-bg);
-  padding: 0.6em 0.8em;
-  text-transform: capitalize;
-  border: none;
-  border-radius: 8px;
-  margin-bottom: 1em;
-  animation: animation-1 0.1s ease-in;
-  opacity: 1;
+
+
+ 
 }
 
 .buy__btn:hover {
@@ -119,19 +119,17 @@ input[type="number"]::-webkit-inner-spin-button {
 }
 .desc__title,
 .comments__title {
-  font-size: 1.5rem;
+  font-size: 1.7rem;
   text-transform: capitalize;
   margin-bottom: 0.6em;
-  font-weight: 600;
+  font-weight: 500;
 }
 .desc__leading {
   font-size: 1rem;
   text-transform: capitalize;
-  margin-bottom: 0.6em;
   font-weight: 400;
   color: var(--description-leading-text);
-  line-height: 1.7em;
-  margin-bottom: 1.8em;
+  line-height: 1.8em;
 }
 .comment__form {
   display: flex;
@@ -206,17 +204,16 @@ input[type="number"]::-webkit-inner-spin-button {
   margin-left: 1em;
 }
 .comments__container {
-  padding: 1em;
+  padding: 0 1em;
 }
 
-.like__btn {
+.like__btn{
   color:var(--likeBtn-text);
-  cursor: pointer;
 }
 .like__btn.active {
   color: var(--likeBtn-active-text);
 }
-
+/* 
 .like__btn:hover{
   color:var(--likeBtn-hover-text);
-}
+} */

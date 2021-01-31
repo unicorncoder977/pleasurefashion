@@ -3,7 +3,7 @@
 	background-color: var(--header-bg);
 	display: flex;
 	align-items: center;
-	padding: 0 1em;
+	padding: 0 0.9em;
 	min-height: 8vh;
 	color:white;
 	font-size: 1.6rem;
@@ -24,8 +24,8 @@
 }
 
 .brand__logo {
-	font-size: 1.6rem;
-	font-weight: 600;
+	font-size: 1.63rem;
+	font-weight: 400;
 	text-transform: capitalize;
 	color: var(--brand-logo-clr);
 	margin-left: 1em;
@@ -54,11 +54,11 @@
 	height: 100vh;
 	top: 0;
 	left: 0;
-	color:var(--sidebar-bg);
-	padding: 2em 0.7em;
+	color:black;
+	padding: 3em 0.7em;
 	text-transform: capitalize;
 	z-index: 101;
-	background-color:#2d3436;
+	background-color:#fff;
 
 }
 
@@ -90,8 +90,12 @@
 	top: 0;
 }
 .sidebar__profile {
-	text-align: center;
-	width: 50%;
+	margin:0 auto 2em;
+	width: 100%;
+	display:flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
 }
 .profile__image {
 	font-size: 7rem;
@@ -100,10 +104,11 @@
 	border-radius: 50%;
 }
 .profile__username {
-	margin-top: 0.3em;
-	font-size: 1.4rem;
-	font-weight: 500;
+	font-size: 1.8rem;
+	font-weight: 600;
 	color:var(--sidebar-name-text);
+	margin-top: 0.8em;
+
 }
 
 .sidebar__list {
@@ -112,7 +117,7 @@
 }
 
 .sidebar__item {
-	margin-bottom: 1.5em;
+	margin-bottom: 2.8em;
 	position: relative;
 }
 
@@ -127,10 +132,10 @@
 	height: 2px;
 }
 .sidebar__link {
-	font-size: 1rem;
-	font-weight: 300;
-	letter-spacing: 0.1em;
-	color: var(--sidebar-link-text);
+	font-size: 1.3rem;
+	font-weight: 500;
+	letter-spacing: 0.2em;
+	color: #000;
 }
 .sidebar__link:hover,
 .sidebar__link:focus {
@@ -139,7 +144,7 @@
 .sidebar__link__icon {
 	float: right;
 	margin-top: 0.3em;
-	color:var(--sidebar-link-icon-text);
+	/* color:var(--sidebar-link-icon-text); */
 }
 
 .sidebar__link__icon:hover,.sidebar__Link__icon:focus {

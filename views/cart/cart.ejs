@@ -13,7 +13,8 @@
                     <div class="order__header">
                     
                         <span class="wrapper__total">Total:<span class="total__amount">₹<%=cart.total%></span></span>
-                        <button total-price='<%=cart.total%>' class="checkout__btn">Checkout</button>
+                        <form action="/buy" method="GET">
+                        <button total-price='<%=cart.total%>' class="checkout__btn">Checkout</button></form>
                     
                     </div>
 

@@ -6,7 +6,16 @@ var UserSchema = new mongoose.Schema({
     googleID: String,
     email: String,
     username: String,
-    profileImage: String
+    profileImage: String,
+    address: {
+        street: String,
+        pincode: String,
+        city: String,
+        mobileNumber: String,
+        country:String
+        
+        
+    }
 });
 
 UserSchema.plugin(passportLocalMongoose);

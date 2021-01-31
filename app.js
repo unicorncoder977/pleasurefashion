@@ -20,7 +20,8 @@ bodyParser = require('body-parser');
 methodOverride = require('method-override');
 flash = require('connect-flash');
 session = require('express-session');
-
+Product = require('./api/models/product');
+// User = require('./api/models/users');
 morgan = require('morgan');
 // axios = require('axios');
 dotenv = require('dotenv').config();
@@ -193,123 +194,48 @@ app.get('/logout', (req, res) => {
 
 
 
-app.use('/products', productRoutes);
+app.use('/products', checkUserLoggedIn, productRoutes);
 app.use('/cart', checkUserLoggedIn, checkCart, cartRoutes);
 app.use('/orders', checkUserLoggedIn, orderRoutes);
 app.use('/wishlist', checkUserLoggedIn, wishlistRoutes);
-app.use('/search', searchRoutes);
-app.use('/tags', tagRoutes);
+app.use('/search', checkUserLoggedIn, searchRoutes);
+app.use('/tags', checkUserLoggedIn, tagRoutes);
 app.use('/comments', checkUserLoggedIn, commentRoutes);
 app.use('/paperwork', paperWorkRoutes);
+app.get('/buy', (req, res, next) => {
+ 
+    // var productPrice = parseFloat(req.body.productPrice);
+    // console.log(productPrice, typeof (productPrice));
+    // var productQuantity = parseFloat(req.body.productQuantity);
+    // console.log(productQuantity, typeof (productQuantity));
+    // var totalAmount=productPrice*productQuantity;
+    // console.log(totalAmount);
 
+    // const product = await Product.findOne({ _id: productId }).exec();
+    res.render('address.ejs',{totalAmount:899});
 
-
-app.get("/order", (req, res) => {
-    try {
-        const options = {
-            amount: 2 * 100, // amount == Rs 10
-            currency: "INR",
-            receipt: "receipt#1",
-            payment_capture: 0,
-            // 1 for automatic capture // 0 for manual capture
-        };
-        instance.orders.create(options, async function (err, order) {
-            if (err) {
-                return res.status(500).json({
-                    message: "Something Went Wrong",
-                });
-            }
-            return res.status(200).json(order);
-        });
-    } catch (err) {
-        return res.status(500).json({
-            message: "Something Went Wrong",
-        });
-    }
 });
 
-app.post("/capture/:paymentId", (req, res) => {
-    try {
-        return request(
-            {
-                method: "POST",
-                url: `https://${RAZOR_PAY_KEY_ID}:${RAZOR_PAY_KEY_SECRET}@api.razorpay.com/v1/payments/${req.params.paymentId}/capture`,
-                form: {
-                    amount: 2 * 100, // amount == Rs 10 // Same As Order amount
-                    currency: "INR",
-                },
-            },
-            async function (err, response, body) {
-                if (err) {
-                    return res.status(500).json({
-                        message: "Something Went Wrong",
-                    });
-                }
-                console.log("Status:", response.statusCode);
-                console.log("Headers:", JSON.stringify(response.headers));
-                console.log("Response:", body);
-                return res.status(200).json(body);
-            });
-    } catch (err) {
-        return res.status(500).json({
-            message: "Something Went Wrong",
-        });
+
+app.post('/address', async (req, res, next) => {
+    const newAddress ={
+        street: req.body.address,
+        pincode: req.body.pincode,
+        city: req.body.city,
+        mobile: req.body.mobile,
+        country:req.body.country
     }
+
+    
+    const response = await  User.findOneAndUpdate({ _id: req.user._id }, { $set: { address: newAddress } }).exec();
+    const updatedUser = await User.findOne({ _id: req.user._id }).exec();
+
+    
+
+    
 });
-// app.post('/purchase', checkAuth, async (req, res, next) => {
 
 
-
-//     // console.log(req.body);
-
-//     // var products = req.body.products;
-
-//     // // var html = '';
-
-//     // // products.forEach(product => {
-//     // //     html += product.name;
-
-//     // // });
-//     // // console.log('html is' + html);
-
-//     // stripe.charges.create({
-//     //     amount: 200,
-//     //     source: req.body.tokenId,
-//     //     currency: 'INR'
-
-//     // }).then(result => {
-//     //     console.log(result);
-
-//     //     var transporter = nodemailer.createTransport({
-//     //         service: 'gmail',
-//     //         auth: {
-//     //             user: 'rajneeshkumar2545@gmail.com',
-//     //             pass: 'nloqerbrittoudhi'
-//     //         }
-//     //     });
-
-//     //     var mailOptions = {
-//     //         from: 'rajneeshkumar2545@gmail.com',
-//     //         to: 'ssbcap@gmail.com',
-//     //         subject: 'Pleasure',
-//     //         text: 'Your order was confirmed and it will be delivered in a few days.'
-
-//     //     };
-
-//     //     transporter.sendMail(mailOptions, function (error, info) {
-//     //         if (error) {
-//     //             console.log(error);
-//     //         } else {
-//     //             console.log('Email sent: ' + info.response);
-//     //         }
-//     //     });
-//     // })
-//     //     .catch(err => {
-//     //         console.log(err);
-//     //     })
-
-
-// });
 
 //404 page not found
 app.get('*', (req, res) => {

@@ -1,6 +1,7 @@
 .search__form {
+	width:90%;
 	height: 2.5em;
-	margin: 2em auto 0;
+	margin: 2.6em auto 0;
 	position: relative;
 }
 
@@ -15,13 +16,14 @@
 	min-height:100%;
 	border: none;
 	padding-left: 4em;
-	font-size: 0.8rem;
-	font-weight: 300;
+	font-size: 0.875rem;
+	font-weight: 400;
 	border-radius: 30px;
 	background-color: var(--search-bg);
-	color: #000000;
+	color: var(--search-text);
 	box-shadow:2px 2px 2px rgba(0,0,0,0.1);
 }
+
 .form__input:focus {
 	outline: none;
 	border: 2px solid darkslategray;
